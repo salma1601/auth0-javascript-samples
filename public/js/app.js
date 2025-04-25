@@ -82,12 +82,15 @@ const requireAuth = async (fn, targetUrl) => {
 const callApi = async () => {
   try {
     const token = await auth0Client.getTokenSilently();
-
-    const response = await fetch("/api/external.js", {
+	/*
+    const response = await fetch("/api/external", {
       headers: {
         Authorization: `Bearer ${token}`
       }
     });
+    */
+    const response = await fetch("/api/external"); // Pas de header
+
 
     const responseData = await response.json();
     const responseElement = document.getElementById("api-call-result");
