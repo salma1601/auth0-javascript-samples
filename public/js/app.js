@@ -90,9 +90,10 @@ const callApi = async () => {
     });
     */
     const response = await fetch("/api/external"); // Pas de header
+    /*
     const text = await response.text(); // <-- pour voir la vraie réponse
     console.log("RAW response:", text);
-
+    */
     const responseData = await response.json();
     const responseElement = document.getElementById("api-call-result");
 

@@ -2,7 +2,7 @@ import { getSession } from "@auth0/nextjs-auth0";
 
 export default async function handler(req, res) {
   const session = getSession(req, res);
-
+  console.log("Session côté serveur :", session);
   if (!session || !session.accessToken) {
     return res.status(401).json({ error: "Non authentifié" });
   }
