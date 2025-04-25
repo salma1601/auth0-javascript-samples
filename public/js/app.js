@@ -83,7 +83,7 @@ const callApi = async () => {
   try {
     const token = await auth0Client.getTokenSilently();
 
-    const response = await fetch("/api/external", {
+    const response = await fetch("https://auth0-api-sample.netlify.app", {
       headers: {
         Authorization: `Bearer ${token}`
       }
